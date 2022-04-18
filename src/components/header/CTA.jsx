@@ -4,7 +4,7 @@ export default function CTA() {
     return (
         <div className='cta'>
             <a href='' download className='btn'>CV Letöltése</a>
-            <a href='#contact' className='btn btn-primary'>Üzenj Nekem!</a>
+            <a href='#contact' className='btn btn-primary'>Írj Üzenetet!</a>
         </div>
     )
 }

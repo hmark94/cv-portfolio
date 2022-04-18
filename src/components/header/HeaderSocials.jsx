@@ -6,10 +6,10 @@ export default function HeaderSocials() {
     return (
         <div className='header__socials'>
             <a href='https://www.linkedin.com/in/markhatala/' target='_blank'>
-            <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faLinkedin} />
             </a>
             <a href='https://github.com/hmark94' target='_blank'>
-            <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faGithub} />
             </a>
         </div>
     )

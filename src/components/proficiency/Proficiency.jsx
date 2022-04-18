@@ -3,6 +3,6 @@ import './proficiency.css'
 
 export default function Proficiency() {
   return (
-    <div>Proficiency</div>
+    <section id='proficiency'>Proficiency</section>
   )
 }
