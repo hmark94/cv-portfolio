@@ -1,6 +1,6 @@
 import React from 'react'
 import './footer.css'
-import {BsFacebook, BsInstagram, BsGithub } from 'react-icons/bs'
+import { BsFacebook, BsInstagram, BsGithub, BsLinkedin } from 'react-icons/bs'
 
 export default function Footer() {
   return (
@@ -15,6 +15,9 @@ export default function Footer() {
       </ul>
 
       <div className="footer__socials">
+        <a href='https://www.linkedin.com/in/markhatala/' target='_blank' rel="noopener noreferrer">
+          <BsLinkedin />
+        </a>
         <a href='https://facebook.com/mark.hatala.18/' target='_blank' rel="noopener noreferrer"><BsFacebook /></a>
         <a href='https://instagram.com/mark.hatala/' target='_blank' rel="noopener noreferrer"><BsInstagram /></a>
         <a href='https://github.com/hmark94/' target='_blank' rel="noopener noreferrer"><BsGithub /></a>
@@ -23,6 +26,6 @@ export default function Footer() {
       <div className="footer__copyright">
         <small>&copy; 2022 Mark Hatala. All rights reserved.</small>
       </div>
-    </footer>
+    </footer >
   )
 }

@@ -17,6 +17,7 @@ export default function Header() {
 
         <div className='me'>
           <img src='http://placehold.jp/150x250.png' alt='profile_picture' />
+          <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa tenetur perspiciatis quam, quidem sit eveniet? Quod culpa cupiditate, quo maxime minus iste deleniti voluptatem optio quam vitae hic commodi magnam.</h5>
         </div>
 
         <a href='#contact' className='scroll__down'><FontAwesomeIcon icon={faAngleDown} /></a>
