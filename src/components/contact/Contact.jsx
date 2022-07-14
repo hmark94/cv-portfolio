@@ -1,11 +1,44 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './contact.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { RiMessengerLine } from 'react-icons/ri'
 import { FaViber } from 'react-icons/fa'
 
+/*=========== FIREBASE ============*/
+import { db } from '../../firebase-config'
+import { collection, addDoc } from 'firebase/firestore'
+
 export default function Contact() {
+  const [newName, setNewName] = useState('');
+  const [newEmail, setNewEmail] = useState('');
+  const [newMessage, setNewMessage] = useState('');
+
+  const messagesCollectionRef = collection(db, "messages")
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await addDoc(messagesCollectionRef, {
+      name: newName,
+      email: newEmail,
+      message: newMessage,
+    })
+      .then(() => {
+        alert('Üzenet elküldve📨')
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+
+    setNewName('');
+    setNewEmail('');
+    setNewMessage('');
+  }
+
+
+
+
   return (
     <section id='contact'>
       <h5>Kapcsolat</h5>
@@ -37,12 +70,13 @@ export default function Contact() {
 
         </div>
 
-        <form action="">
-          <input type="text" name='name' placeholder='Teljes Név' required />
-          <input type="email" name='email' placeholder='E-mail cím' required />
-          <textarea name="message" rows="7" placeholder='Üzenet írása' required></textarea>
+        <form action="" onSubmit={handleSubmit}>
+          <input type="text" name='name' placeholder='Teljes Név' value={newName} onChange={(e) => setNewName(e.target.value)} required />
+          <input type="email" name='email' placeholder='E-mail cím' value={newEmail} onChange={(e) => setNewEmail(e.target.value)} required />
+          <textarea name="message" rows="7" placeholder='Üzenet írása' value={newMessage} onChange={(e) => setNewMessage(e.target.value)} required></textarea>
           <button type='submit' className='btn btn-primary'>Üzenet küldése</button>
         </form>
+
       </div>
     </section>
   )
