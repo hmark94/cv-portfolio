@@ -124,8 +124,12 @@ img {
     }
 
     section {
-        margin-top: 13rem;
+        margin-top: 2rem;
     }
+
+    section#about {
+        margin-top: 18rem;
+      }
 }
 
 /* ================== MQ (Small Devices) ========== */
@@ -136,5 +140,13 @@ img {
 
     section>h2 {
         margin-bottom: 2rem;
+    }
+
+    section#about {
+        margin-top: 34rem;
+    }
+
+    .me {
+        width: auto;
     }
 }
